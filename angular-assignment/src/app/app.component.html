@@ -1,0 +1,23 @@
+<header>
+  Welcome to my Angular Assignment!!
+</header>
+<div class="main">
+<aside>
+  <div *ngIf="alreadyLoggedIn()">{{loggedInUser()}}</div>
+  <button *ngIf="alreadyLoggedIn()" (click)="logoff()"> Sign out </button>
+
+  <!-- <h1><aside><span *ngIf="alreadyLoggedIn()">{{loggedInUser()}}</span> </aside></h1> -->
+
+</aside>
+
+<section>
+  <h1><router-outlet></router-outlet></h1>
+  <!-- <p *ngFor="userDetail">{{}}</p> -->
+</section>
+
+<aside>
+
+</aside>
+
+</div>
+<footer>copy right: haifei.chen@accolite.com</footer>

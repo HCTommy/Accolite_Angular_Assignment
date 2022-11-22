@@ -1,0 +1,26 @@
+
+<div *ngFor="let product of products ">
+    <div class="card">
+        <div>{{product.name}}</div>
+        <div><img [src]="product.icon"></div>
+    </div>
+</div>
+<div class="card">
+    <div style="color: red;">Add new product</div>
+    <table>
+        <tr>
+            <td><span style="font-size: 15px;" >Product Name:</span></td>
+            <td><input [(ngModel)]="name" type="text"></td>
+
+        </tr>
+        <tr>
+            <td><span  style="font-size: 15px;" >Product Icon URL:</span></td>
+            <td><input [(ngModel)]="icon" type="text"></td>
+
+        </tr>
+    </table>
+    <button (click)="addProduct()">Add</button>
+
+</div>
+
+

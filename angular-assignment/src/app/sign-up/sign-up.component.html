@@ -1,0 +1,36 @@
+<div class="register-form">
+    <h1>Register:</h1>
+
+    <div class="" [formGroup]="register">
+        <table>
+            <tr>
+                <td><label>User Name: </label></td>
+                <td><input type="value" formControlName="name" [(ngModel)]="userName"></td>
+                <td>
+                    <span class="error" *ngIf="alreadyExistUserName()">User name already exist</span>
+                    <span class="error" *ngIf="!register.get('name').valid">user name at least 6 digit length</span>
+                </td>
+
+            </tr>
+            <tr>
+                <td> <label>Email: </label></td>
+                <td> <input type="email" formControlName="email"></td>
+                <td><span class="error" *ngIf="!register.get('email').valid">please enter valid email</span></td>
+
+            </tr>
+            <tr>
+                <td><label>Password: </label></td>
+                <td><input type="password" formControlName="password" [(ngModel)]="password"></td>
+                <td><span class="error" *ngIf="!register.get('password').valid">Password at least 8 digits in length</span></td>
+            </tr>
+            <tr>
+                <td><label>Re-enter Password: </label></td>
+                <td><input type="password" formControlName="repassword" [(ngModel)]="repassword"></td>
+                <td><span class="error" *ngIf="!validRePassword()">Password doesn't match</span></td>
+            </tr>
+        </table>
+    </div>
+    <button class="submit" (click)="regist()" [disabled]="!(register.valid&&validRePassword()&&!alreadyExistUserName())">Submit</button>
+
+
+</div>
